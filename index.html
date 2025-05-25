@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Lista de Tarefas</h1>
+
+    <input type="text" id="novaTarefa" placeholder="Digite a nova tarefa">
+    
+
+    <div>
+        <button id="adicionar">Adicionar</button>
+        <button data-filtro="todas">Todas</button>
+        <button data-filtro="pendentes">Pendentes</button>
+        <button data-filtro="concluidas">Concluídas</button>
+    </div>
+
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

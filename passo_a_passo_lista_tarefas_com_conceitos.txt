@@ -1,0 +1,101 @@
+
+Passo a passo detalhado para criar um site de lista de tarefas com JavaScript
+
+1. Criar o arquivo HTML com os seguintes elementos:
+   - Um campo de input para digitar as tarefas (ex: <input id="novaTarefa">)
+   - Um botão para adicionar a tarefa (ex: <button id="adicionar">Adicionar</button>)
+   - Uma lista não ordenada onde as tarefas serão exibidas (ex: <ul id="listaTarefas"></ul>)
+   - Botões para filtrar as tarefas (Todas, Pendentes, Concluídas) usando atributo data-filtro
+
+2. Criar o arquivo CSS para estilizar o site, com destaque para:
+   - A aparência das tarefas pendentes e concluídas (ex: texto riscado para concluídas)
+   - O botão de excluir (ex: botão com "❌" ao lado de cada tarefa)
+
+3. Criar o arquivo JavaScript e conectar com o HTML (ex: <script src="script.js"></script>)
+   - Pegar os elementos HTML pelo ID ou atributo (input, botão adicionar, lista e botões filtro)
+   - Criar um array para armazenar as tarefas (com objetos que têm texto e estado completa/pendente)
+   - Carregar tarefas salvas do localStorage, se existirem
+   - Definir uma variável para armazenar o filtro atual (todas, pendentes, concluidas)
+
+4. Criar a função salvar() que:
+   - Converte o array de tarefas em texto JSON e salva no localStorage para persistência
+
+5. Criar a função renderizarTarefas() que:
+   - Limpa a lista HTML antes de atualizar
+   - Filtra as tarefas com base no filtro atual
+   - Para cada tarefa filtrada:
+     - Cria um elemento <li> com o texto da tarefa
+     - Aplica uma classe CSS para riscar as tarefas concluídas
+     - Cria e adiciona um botão de exclusão (ex: ❌) dentro do <li>
+     - Adiciona evento para marcar a tarefa como concluída ao clicar no texto
+     - Adiciona evento para excluir a tarefa ao clicar no botão de exclusão
+   - Atualiza a lista na tela
+
+6. Criar o evento para o botão "Adicionar":
+   - Ler o valor do input
+   - Validar para não adicionar tarefas vazias
+   - Adicionar uma nova tarefa pendente no array
+   - Limpar o campo input
+   - Salvar a lista atualizada
+   - Renderizar a lista atualizada
+
+7. Criar eventos para os botões de filtro:
+   - Ao clicar, alterar o filtro atual para 'todas', 'pendentes' ou 'concluidas'
+   - Renderizar a lista conforme o filtro escolhido
+
+8. Ao carregar a página, chamar renderizarTarefas() para mostrar as tarefas salvas
+
+9. Testar:
+   - Adicionar tarefas
+   - Marcar como concluída clicando no texto da tarefa
+   - Excluir tarefas clicando no botão ❌
+   - Trocar entre os filtros e observar a lista atualizada
+   - Recarregar a página e confirmar que as tarefas permanecem
+
+10. Ajustar o CSS para deixar o visual agradável e funcional
+
+
+------------------------
+CONCEITOS IMPORTANTES EXPLICADOS:
+
+- Array:
+  Uma estrutura que armazena múltiplos valores em uma lista ordenada. No projeto, o array 'tarefas' guarda objetos que representam cada tarefa.
+
+- JSON.stringify e JSON.parse:
+  Métodos para converter objetos JavaScript em texto (string) e vice-versa. Usamos para salvar e recuperar dados no localStorage, que só armazena texto.
+
+- localStorage:
+  Uma área no navegador para guardar dados do site localmente e que persistem mesmo após fechar a aba ou o navegador.
+
+- Evento (addEventListener):
+  Forma de "escutar" ações do usuário (como cliques) e responder com funções específicas.
+
+- e.stopPropagation():
+  Método usado dentro de um evento para impedir que o clique em um elemento filho “suba” e acione eventos dos elementos pais. 
+  Exemplo: no botão excluir dentro do <li>, evita que o clique também marque a tarefa como concluída.
+
+- splice():
+  Método do array que remove, substitui ou adiciona elementos em posições específicas. Usamos para remover uma tarefa do array quando excluímos.
+
+- arrow function (função seta):
+  Sintaxe mais curta para escrever funções em JavaScript, ex: () => { ... }
+
+- innerHTML:
+  Propriedade que permite ler ou alterar o conteúdo HTML de um elemento. Usamos para limpar e redesenhar a lista.
+
+- classList.add():
+  Método para adicionar classes CSS a um elemento, mudando sua aparência.
+
+- createElement():
+  Cria elementos HTML dinamicamente via JavaScript, como os <li> para as tarefas.
+
+- appendChild():
+  Adiciona um elemento filho dentro de outro, construindo a estrutura da página.
+
+- trim():
+  Remove espaços em branco do começo e do fim de uma string, útil para validar o input.
+
+---
+
+Com esses conceitos claros, fica mais fácil entender como o código funciona e como construir seu site passo a passo.
+
