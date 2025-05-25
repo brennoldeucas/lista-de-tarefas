@@ -1,0 +1,31 @@
+@media (max-width: 400px) {
+  .container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  input[type="text"] {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 10px;
+    margin: 4px 2px;
+  }
+
+  li {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+    div {
+    display: flex;           /* Organiza os botões em linha */
+    flex-wrap: wrap;         /* Permite que quebrem para a próxima linha se faltar espaço */
+    justify-content: center; /* Centraliza os botões */
+  }
+}
